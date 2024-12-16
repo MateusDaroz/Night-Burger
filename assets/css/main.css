@@ -1,0 +1,23 @@
+.home{
+    flex-direction: column;
+}
+
+.btn{
+    border: none;
+    background-color: var(--color-btn-bg);
+    border-radius: 8px;
+    padding: 1em;
+    color: var(--color-primary-text);
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.466));
+    cursor: pointer;
+}
+
+.social-medias{
+    display: flex;
+    align-items: center;
+    margin: .5em;
+}
+
+.social-medias img{
+    margin: 0 .3em;
+}

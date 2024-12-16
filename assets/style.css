@@ -1,0 +1,11 @@
+@import './css/header.css';
+@import './css/main.css';
+@import './css/footer.css';
+@import './css/reset.css';
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
