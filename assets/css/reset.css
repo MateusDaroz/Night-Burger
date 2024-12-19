@@ -1,7 +1,9 @@
 :root {
-  --color-bg: #192A51;
-  --color-nav-bg: #AAA1C8;
-  --color-btn-bg: #AAA1C8;
+  --color-bg: #101214; /*-100*/
+  --color-nav-bg: #161A1D; /*0*/
+  --color-btn-bg: #1D2125; /*100*/
+  --color-btn-bg-hover:#22272B; /*200*/
+  --color-product-bg: #1D2125;
   --color-primary-text: white;
 }
 
@@ -14,8 +16,12 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(black, var(--color-bg));
+  background: var(--color-bg);
   color: var(--color-primary-text);
+}
+
+a{
+  all: unset;
 }
 
 

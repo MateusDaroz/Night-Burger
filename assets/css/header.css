@@ -3,9 +3,9 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-   
     z-index: 999;
     width: 100%;
+    background-color: var(--color-nav-bg);
 }
 
 header *{
@@ -25,8 +25,4 @@ nav ul{
     display: flex;
     list-style: none;
     gap: 16px;
-}
-
-nav ul li{
-    cursor: pointer;
 }
