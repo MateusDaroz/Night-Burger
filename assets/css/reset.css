@@ -1,23 +1,22 @@
-
-
-
-:root{
-    --color-bg: #192A51;
-    --color-nav-bg: #AAA1C8;
-    --color-btn-bg: #AAA1C8;
-    --color-primary-text: white;
+:root {
+  --color-bg: #192A51;
+  --color-nav-bg: #AAA1C8;
+  --color-btn-bg: #AAA1C8;
+  --color-primary-text: white;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: linear-gradient(black, var(--color-bg));
-    color: var(--color-primary-text);
-    font-family: 'Rubik', sans-serif;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
 }
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(black, var(--color-bg));
+  color: var(--color-primary-text);
+}
+
+
 
