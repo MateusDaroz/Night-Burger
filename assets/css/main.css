@@ -36,6 +36,7 @@
 
 .social-medias img{
     margin: 0 .3em;
+    filter: invert(1);
 }
 
 aside{
@@ -54,7 +55,12 @@ aside ul{
 }
 
 aside ul li{
+    cursor: pointer;
     margin: 1em;
+}
+
+aside ul li:active{
+    color: var(--color-primary-text-active);
 }
 
 .content{
@@ -151,4 +157,14 @@ aside ul li{
 
 .product, .carousel div{
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.226));
+}
+
+.login{
+   min-height: 100vh;
+}
+
+.login-pane{
+    background-color: var(--color-bg);
+    min-width: 300px;
+    width: 40%;
 }

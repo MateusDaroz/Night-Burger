@@ -4,7 +4,8 @@
   --color-btn-bg: #1D2125; /*100*/
   --color-btn-bg-hover:#22272B; /*200*/
   --color-product-bg: #1D2125;
-  --color-primary-text: white;
+  --color-primary-text: #DEE4EA; /*1100*/
+  --color-primary-text-active: #B6C2CF; /*900*/
 }
 
 *{
@@ -24,5 +25,8 @@ a{
   all: unset;
 }
 
+.main-page{
+  background: linear-gradient(135deg, var(--color-bg), var(--color-btn-bg-hover))
+}
 
 

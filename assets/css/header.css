@@ -19,10 +19,19 @@ header *{
 
 .logo-container img{
     width: 100%;
+    cursor: pointer;
 }
 
 nav ul{
     display: flex;
     list-style: none;
     gap: 16px;
+}
+
+nav ul li{
+    cursor: pointer;
+}
+
+nav ul li:active{
+    color: var(--color-primary-text-active);
 }
