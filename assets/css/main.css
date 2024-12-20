@@ -159,10 +159,6 @@ aside ul li:active{
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.226));
 }
 
-.login{
-   min-height: 100vh;
-}
-
 .login-pane{
     background-color: var(--color-bg);
     min-width: 350px;
@@ -173,6 +169,10 @@ aside ul li:active{
     flex-direction: column;
     padding: 1em;
     border-radius: 15px;
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .login-pane img{
