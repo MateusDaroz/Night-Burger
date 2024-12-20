@@ -3,6 +3,8 @@
   --color-nav-bg: #161A1D; /*0*/
   --color-btn-bg: #1D2125; /*100*/
   --color-btn-bg-hover:#22272B; /*200*/
+  --color-input-border: #22272B;
+  --color-input-border-focus: #454F59; /*400*/
   --color-product-bg: #1D2125;
   --color-primary-text: #DEE4EA; /*1100*/
   --color-primary-text-active: #B6C2CF; /*900*/
