@@ -128,7 +128,7 @@ aside ul li:active{
     display: flex;
     background-color: var(--color-product-bg);
     margin: 1em;
-    width: 520px;
+    width: 570px;
     height: 170px;
     border-radius: 15px;
 }
@@ -165,7 +165,7 @@ aside ul li:active{
 
 .login-pane{
     background-color: var(--color-bg);
-    min-width: 300px;
+    min-width: 350px;
     width: 40%;
     display: flex;
     justify-content: center;
@@ -196,14 +196,14 @@ aside ul li:active{
     width: 100%;
     padding: 1em;
     border: transparent;
-    transition: .5s;
+    transition: .3s;
     outline: none;
     border: 1px solid var(--color-input-border);
     color: var(--color-primary-text);
     border-radius: 7px;
 }
 
-.login-pane label{
+.login-pane .login-group label{
     position: absolute;
     left: 0;
     top: 25%;
@@ -214,10 +214,10 @@ aside ul li:active{
 }
 
 .login-pane input:focus, .login-pane input:valid{
-    border: 1px solid var(--color-input-border-focus);
+    border-color: var(--color-input-border-focus);
 }
 
-.login-pane input:focus~label, .login-pane input:valid~label{
+.login-pane .login-group input:focus~label, .login-pane .login-group input:valid~label{
     top: -25%;
     margin: 0 .8em;
     background-color: var(--color-bg);
@@ -228,8 +228,37 @@ aside ul li:active{
     background-color: var(--color-primary-text-active);
     color: var(--color-bg);
     margin: 1em;
+    cursor: pointer;
 }
 
 .login-pane input[type="submit"]:active{
-    background-color: ;
+    background-color: var(--color-primary-text);
+}
+
+.login-pane input[type="checkbox"]{
+    width: initial;
+}
+
+.forgot-remember-group{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.forgot-remember-group a{
+    text-align: right;
+}
+
+label[for="change-form"], .forgot-remember-group a{
+    color: var(--color-emphasis-text);
+    cursor: pointer;
+}
+
+#change-form, #register-mode, #change-form:checked~#login-mode{
+    display: none;
+}
+
+#change-form:checked~#register-mode{
+    display: flex;
 }

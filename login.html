@@ -12,7 +12,8 @@
 <body class="main-page">
     <main>
         <section class="flex-container login" id="login-section">
-            <div class="login-pane">
+            <input type="checkbox" id="change-form" name="change-form">
+            <form class="login-pane" id="login-mode">
                 <img src="/assets/icons/NightBurgerLogo.png">
                 <h1>Night Burger - Login</h1>
                 <p>Insira suas credenciais para fazer login no sistema e realizar seus pedidos</p>
@@ -24,8 +25,41 @@
                     <input type="password" id="login-password" name="login-password" required>
                     <label for="login-password">Senha</label>
                 </div>
-                <input type="submit">
-            </div>
+                <div class="forgot-remember-group">
+                    <div>
+                        <input type="checkbox" id="stay-connected" name="stay-connected">
+                        <label for="stay-connected">Manter-me conectado</label>
+                    </div>
+                    <a>Esqueci minha senha</a>
+                </div>
+                <input type="submit" value="Fazer Login">
+                <p>Ainda não possui uma conta? Faça já o seu cadastro clicando <label for="change-form">aqui!</label></p>
+            </form>
+            <form class="login-pane" id="register-mode">
+                <img src="/assets/icons/NightBurgerLogo.png">
+                <h1>Night Burger - Registrar</h1>
+                <p>Insira suas credenciais para fazer o registro no sistema e realizar seus pedidos</p>
+                <div class="login-group">
+                    <input type="text" id="login-name" name="login-name" required>
+                    <label for="login-name">Nome</label>
+                </div>
+                <div class="login-group">
+                    <input type="email" id="login-email" name="login-email" required>
+                    <label for="login-email">Email</label>
+                </div>
+                <div class="login-group">
+                    <input type="password" id="login-password" name="login-password" required>
+                    <label for="login-password">Senha</label>
+                </div>
+                <div class="forgot-remember-group">
+                    <div>
+                        <input type="checkbox" id="stay-connected" name="stay-connected">
+                        <label for="stay-connected">Manter-me conectado</label>
+                    </div>
+                </div>
+                <input type="submit" value="Registrar">
+                <p>Já possui uma conta? Faça já o seu login clicando <label for="change-form">aqui!</label></p>  
+            </form>
         </section>
     </main>
 </body>
