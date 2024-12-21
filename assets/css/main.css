@@ -173,11 +173,13 @@ aside ul li:active{
     top: 54%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: opacity .5s ease, visibility .5s ease;
 }
 
 .login-pane img{
     width: 130px;
     margin: .3em;
+    border-radius: 50%;
 }
 
 .login-pane h1, .login-pane p{
@@ -217,7 +219,7 @@ aside ul li:active{
     border-color: var(--color-input-border-focus);
 }
 
-.login-pane .login-group input:focus~label, .login-pane .login-group input:valid~label{
+.login-pane .login-group input:focus~label, .login-pane .login-group input:valid~label, .login-pane .login-group input:not(:placeholder-shown)~label{
     top: -25%;
     margin: 0 .8em;
     background-color: var(--color-bg);
@@ -255,10 +257,17 @@ label[for="change-form"], .forgot-remember-group a{
     cursor: pointer;
 }
 
-#change-form, #register-mode, #change-form:checked~#login-mode{
+#change-form{
     display: none;
 }
 
-#change-form:checked~#register-mode{
-    display: flex;
+#change-form:checked~#register-mode, #change-form:not(:checked)~#login-mode{
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+#register-mode{
+    opacity: 0;
+    visibility: hidden;
 }
