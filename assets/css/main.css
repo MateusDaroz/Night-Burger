@@ -131,6 +131,11 @@ aside ul li:active{
     width: 570px;
     height: 170px;
     border-radius: 15px;
+    cursor: pointer;
+}
+
+.product:active{
+    background-color: var(--color-product-bg-active);
 }
 
 .product img{
