@@ -12,6 +12,10 @@
     margin-top: 1.3em;
 }
 
+.home > img{
+    width: 150px;
+}
+
 .btn{
     border: none;
     background-color: var(--color-btn-bg);
@@ -34,9 +38,14 @@
     margin: .7em;
 }
 
+.social-medias img:first-child{
+    width: 30px;
+}
+
 .social-medias img{
     margin: 0 .3em;
     filter: invert(1);
+    width: 22px;
 }
 
 aside{
