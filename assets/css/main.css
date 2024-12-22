@@ -276,3 +276,33 @@ label[for="change-form"], .forgot-remember-group a{
     opacity: 0;
     visibility: hidden;
 }
+
+#order-section{
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#order-section *{
+    margin: .5em;
+}
+
+#order-section img{
+    width: 150px;
+    filter: invert(0.8);
+}
+
+#order-section h1, #order-section p{
+    text-align: center;
+}
+
+.btn-alt{
+    border: 2px solid var(--color-btn-bg-hover);
+    background: transparent;
+}
+
+.btn-alt:hover{
+    background-color: var(--color-btn-bg);
+}
