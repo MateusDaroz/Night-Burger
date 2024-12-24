@@ -22,17 +22,17 @@
     <main>
         <section class="flex-container" id="login-section">
             <input type="checkbox" id="change-form" name="change-form">
-            <form class="login-pane" id="login-mode" method="post">
+            <form class="login-pane" id="login" method="post">
                 <img src="/assets/icons/NightBurgerLogo.png">
                 <h1>Night Burger - Login</h1>
                 <p>Insira suas credenciais para fazer login no sistema e realizar seus pedidos</p>
                 <div class="login-group">
-                    <input type="email" id="login-email" name="login-email" required placeholder="">
-                    <label for="login-email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="">
+                    <label for="login_email">Email</label>
                 </div>
                 <div class="login-group">
-                    <input type="password" id="login-password" name="login-password" required placeholder="">
-                    <label for="login-password">Senha</label>
+                    <input type="password" id="_password_hash" name="_password_hash" required placeholder="">
+                    <label for="login_password">Senha</label>
                 </div>
                 <div class="forgot-remember-group">
                     <div>
@@ -44,21 +44,21 @@
                 <input type="submit" value="Fazer Login">
                 <p>Ainda não possui uma conta? Faça já o seu cadastro <label for="change-form">aqui!</label></p>
             </form>
-            <form class="login-pane" id="register-mode" method="post">
+            <form class="login-pane" id="register" method="post">
                 <img src="/assets/icons/NightBurgerLogo.png">
                 <h1>Night Burger - Registrar</h1>
                 <p>Insira suas credenciais para fazer o registro no sistema e realizar seus pedidos</p>
                 <div class="login-group">
-                    <input type="text" id="register-name" name="register-name" required placeholder="">
-                    <label for="login-name">Nome</label>
+                    <input type="text" id="name" name="name" required placeholder="">
+                    <label for="register_name">Nome</label>
                 </div>
                 <div class="login-group">
-                    <input type="email" id="register-email" name="register-email" required placeholder="">
-                    <label for="login-email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="">
+                    <label for="register_email">Email</label>
                 </div>
                 <div class="login-group">
-                    <input type="password" id="register-password" name="register-password" required placeholder="">
-                    <label for="login-password">Senha</label>
+                    <input type="password" id="_password_hash" name="_password_hash" required placeholder="">
+                    <label for="register_password">Senha</label>
                 </div>
                 <div class="forgot-remember-group">
                     <div>
@@ -66,11 +66,12 @@
                         <label for="stay-connected">Manter-me conectado</label>
                     </div>
                 </div>
-                <input type="submit" value="Registrar" onclick="registerClient()">
+                <input type="submit" value="Registrar">
                 <p>Já possui uma conta? Faça já o seu login <label for="change-form">aqui!</label></p>  
             </form>
         </section>
     </main>
     
+    <script type="module" src="/assets/js/controller/loginController.js"></script>
 </body>
 </html>

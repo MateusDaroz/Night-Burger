@@ -275,13 +275,13 @@ label[for="change-form"], .forgot-remember-group a{
     display: none;
 }
 
-#change-form:checked~#register-mode, #change-form:not(:checked)~#login-mode{
+#change-form:checked~#register, #change-form:not(:checked)~#login{
     opacity: 1;
     visibility: visible;
     z-index: 2;
 }
 
-#register-mode{
+#register{
     opacity: 0;
     visibility: hidden;
 }
