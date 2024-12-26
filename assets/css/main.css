@@ -315,3 +315,21 @@ label[for="change-form"], .forgot-remember-group a{
 .btn-alt:hover{
     background-color: var(--color-btn-bg);
 }
+
+.header{
+    background-color: var(--color-btn-bg-hover);
+    padding: 1em;
+}
+
+.header *{
+    margin: .6em 0;
+}
+
+.addon{
+    background-color: var(--color-btn-bg);
+    justify-content: space-between !important; 
+}
+
+.addon img{
+    width: 80px;
+}
