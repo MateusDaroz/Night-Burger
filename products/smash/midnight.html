@@ -13,7 +13,7 @@
 
 <body>
     <main>
-        <section class="flex-container">
+        <section class="flex-container product-addon">
             <!--<img src="https://image.tuasaude.com/media/article/wg/xp/beneficios-do-amendoim_17802_l.jpg">-->
             <form class="product-form">
                 <div class="extra-elements">
@@ -24,13 +24,100 @@
                     <div class="flex-container addon">
                         <div class="flex-container">
                             <img src="https://superprix.vteximg.com.br/arquivos/ids/175436-600-600/Alface-Americana--unidade-.png?v=636319887842970000">
-                            <p>Alface</p>
+                            <div>
+                                <p>Alface</p>
+                                <p>R$2,00</p>
+                            </div>
                         </div>
-                        <input type="number">
+                        <div class="flex-container input-number">
+                            <button type="button" id="sim" onclick="decreaseAmount(this);">-</button>
+                            <input type="number" min="0" max="10" value="0" disabled>
+                            <button type="button" id="nao" onclick="increaseAmount(this);">+</button>
+                        </div>
+                    </div>
+                    <div class="flex-container addon">
+                        <div class="flex-container">
+                            <img src="https://superprix.vteximg.com.br/arquivos/ids/178639-292-292/Tomate-1-unidade-aprox-250g.png?v=636868090295370000">
+                            <div>
+                                <p>Tomate</p>
+                                <p>R$1,50</p>
+                            </div>
+                        </div>
+                        <div class="flex-container input-number">
+                            <button type="button" id="eu" onclick="decreaseAmount(this);">-</button>
+                            <input type="number" min="0" max="10" value="0" disabled>
+                            <button type="button" id="eu2" onclick="increaseAmount(this);">+</button>
+                        </div>
+                    </div>
+                    <div class="flex-container addon">
+                        <div class="flex-container">
+                            <img src="https://cdn.awsli.com.br/300x300/2599/2599960/produto/311490845/cebola-coxa-cocao-ky57jvsgjs.png">
+                            <div>
+                                <p>Cebola Roxa</p>
+                                <p>R$1,50</p>
+                            </div>
+                        </div>
+                        <div class="flex-container input-number">
+                            <button type="button" id="eu" onclick="decreaseAmount(this);">-</button>
+                            <input type="number" min="0" max="10" value="0" disabled>
+                            <button type="button" id="eu2" onclick="increaseAmount(this);">+</button>
+                        </div>
+                    </div>
+                    <div class="flex-container addon">
+                        <div class="flex-container">
+                            <img src="https://naturalmeat.vtexassets.com/arquivos/ids/155410/hamburguer_transp1.png?v=637786285193430000">
+                            <div>
+                                <p>Hamburger Smash (60g)</p>
+                                <p>R$5,00</p>
+                            </div>
+                        </div>
+                        <div class="flex-container input-number">
+                            <button type="button" id="eu" onclick="decreaseAmount(this);">-</button>
+                            <input type="number" min="0" max="10" value="0" disabled>
+                            <button type="button" id="eu2" onclick="increaseAmount(this);">+</button>
+                        </div>
+                    </div>
+                    <div class="flex-container addon">
+                        <div class="flex-container">
+                            <img src="https://naturalmeat.vtexassets.com/arquivos/ids/155410/hamburguer_transp1.png?v=637786285193430000">
+                            <div>
+                                <p>Hamburger (180g)</p>
+                                <p>R$10,00</p>
+                            </div>
+                        </div>
+                        <div class="flex-container input-number">
+                            <button type="button" id="eu" onclick="decreaseAmount(this);">-</button>
+                            <input type="number" min="0" max="10" value="0" disabled>
+                            <button type="button" id="eu2" onclick="increaseAmount(this);">+</button>
+                        </div>
+                    </div>
+                    <div class="flex-container addon">
+                        <div class="flex-container">
+                            <img src="https://www.jauserve.com.br/dw/image/v2/BFJL_PRD/on/demandware.static/-/Sites-jauserve-master/default/dw846c9a07/1950.png?sw=1800">
+                            <div>
+                                <p>Quejo Cheddar (fatia)</p>
+                                <p>R$3,00</p>
+                            </div>
+                        </div>
+                        <div class="flex-container input-number">
+                            <button type="button" id="eu" onclick="decreaseAmount(this);">-</button>
+                            <input type="number" min="0" max="10" value="0" disabled>
+                            <button type="button" id="eu2" onclick="increaseAmount(this);">+</button>
+                        </div>
+                    </div>
+                    <div class="header" id="extra">
+                        <h3>Observações</h3>
+                        <p>Escreva quais observações você deseja fazer para deixar o lanche a sua cara!</p>
+                        <textarea></textarea>
+                    </div>
+                    <div class="order-buttons flex-container header">
+                        <a href="#"><button class="btn btn-alt">Continuar comprando</button></a>
+                        <a href="#"><button class="btn">Avançar para o carrinho</button></a>
                     </div>
                 </div>
             </form>
         </section>
     </main>
+    <script src="/assets/js/controller/orderController.js"></script>
 </body>
 </html>
