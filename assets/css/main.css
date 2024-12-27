@@ -316,6 +316,16 @@ label[for="change-form"], .forgot-remember-group a{
     background-color: var(--color-btn-bg);
 }
 
+
+
+.product-desc img{
+    width: 100%;
+}
+
+.product-desc .header{
+    margin-bottom: .5em;
+}
+
 .header{
     background-color: var(--color-btn-bg-hover);
     padding: 1em;
@@ -337,6 +347,11 @@ label[for="change-form"], .forgot-remember-group a{
 
 .product-addon{
     margin: 1em;
+}
+
+.product-form{
+    min-width: 340px;
+    width: 50%;
 }
 
 .addon{

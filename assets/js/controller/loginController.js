@@ -11,12 +11,14 @@ async function handleSubmit(event){
     const formId = event.target.id;
     const actionType = getActionType(formId);
     const formData = getFormData(event.target);
+    console.log(formData);
+    console.log(JSON.stringify(formData));
 
     if(!validateForm(actionType, formData))
         return;
 
     try{
-        const response = await ApiService.request(event);
+        const response = await ApiService.request(event, "POST");
         if(response === "unauthorized"){
             alert("Dados inválidos!");
         }
