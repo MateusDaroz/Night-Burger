@@ -83,7 +83,7 @@ aside ul li:active{
     align-items: center;
     margin: 1em;
     overflow-x: scroll;
-    width: 84vw;
+    width: 50vw;
 }
 
 .carousel div{
@@ -133,11 +133,16 @@ aside ul li:active{
     flex-wrap: wrap;
 }
 
+.products a{
+    display: inline-flex; 
+    width: auto;
+}
+
 .product{
     display: flex;
     background-color: var(--color-product-bg);
     margin: 1em;
-    width: 570px;
+    width: 50%;
     height: 170px;
     border-radius: 15px;
     cursor: pointer;
