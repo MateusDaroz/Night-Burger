@@ -48,6 +48,10 @@
     width: 22px;
 }
 
+.products-main{
+    display: flex;
+}
+
 aside{
     display: flex;
     justify-content: start;
@@ -126,6 +130,8 @@ aside ul li:active{
     background: rgb(80, 80, 80);
 }
 
+
+
 .products{
     display: flex;
     justify-content: start;
@@ -134,7 +140,7 @@ aside ul li:active{
 }
 
 .products a{
-    display: inline-flex; 
+    display: inline-flex;
     width: 100%;
 }
 
