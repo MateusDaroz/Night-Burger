@@ -1,21 +1,45 @@
-let default_value = 28.99;
-let actual_value = parseFloat(document.getElementById("final-value").innerHTML);
+    const defaultValue = 28.99;
 
-function increaseAmount(element, type){
-    newValue = parseInt(element.previousElementSibling.value) + 1;
-    newValue > 10 ? element.previousElementSibling.value = 10 : element.previousElementSibling.value = newValue;
-    let amount = parseInt(document.getElementById(type + '-amount').value);
-    let value = parseFloat(document.getElementById(type + '-value').innerHTML);
-    actual_value += value;
+    function updateTotal() {
+        let total = defaultValue;
+
+        document.querySelectorAll('.addon').forEach((addon) => {
+            const amount = parseInt(addon.querySelector('input[type="number"]').value);
+            const value = parseFloat(addon.querySelector('span').innerHTML);
+            total += amount * value;
+        });
+        
+        final_value = total*parseInt(document.getElementById("product-amount").value);
+        document.getElementById("final-value").innerHTML = final_value.toFixed(2);
+    }
+
+    function increaseAmount(button) {
+        const input = button.previousElementSibling;
+        let currentValue = parseInt(input.value);
+
+        if (currentValue < 10) {
+            input.value = currentValue + 1;
+            updateTotal();
+        }
+    }
+
+    function decreaseAmount(button) {
+        const input = button.nextElementSibling;
+        let currentValue = parseInt(input.value);
+
+        if (currentValue) {
+            input.value = currentValue - 1;
+            updateTotal();
+        }
+    }
+
+    function decreaseQuantity(button) {
+        const input = button.nextElementSibling;
+        let currentValue = parseInt(input.value);
+
+        if (currentValue > 1) {
+            input.value = currentValue - 1;
+            updateTotal();
+        }
+    }
     
-    document.getElementById("final-value").innerHTML = actual_value.toFixed(2);
-}
-
-function decreaseAmount(element, type){
-    newValue = parseInt(element.nextElementSibling.value) - 1;
-    newValue < 0 ? element.nextElementSibling.value = 0 : element.nextElementSibling.value = newValue;
-    let amount = parseInt(document.getElementById(type + '-amount').value);
-    let value = parseFloat(document.getElementById(type + '-value').innerHTML);
-    actual_value -= value;
-    document.getElementById("final-value").innerHTML = actual_value.toFixed(2);
-}

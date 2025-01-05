@@ -48,9 +48,9 @@
                             </div>
                         </div>
                         <div class="flex-container input-number">
-                            <button type="button" onclick="decreaseAmount(this, 'alface')">-</button>
+                            <button type="button" onclick="decreaseAmount(this)">-</button>
                             <input type="number" id="alface-amount" name="alface-amount" min="0" max="10" value="0" disabled>
-                            <button type="button" onclick="increaseAmount(this, 'alface')">+</button>
+                            <button type="button" onclick="increaseAmount(this)">+</button>
                         </div>
                     </div>
                     <div class="flex-container addon">
@@ -63,9 +63,9 @@
                             </div>
                         </div>
                         <div class="flex-container input-number">
-                            <button type="button" onclick="decreaseAmount(this, 'tomate')">-</button>
+                            <button type="button" onclick="decreaseAmount(this)">-</button>
                             <input type="number" id="tomate-amount" name="tomate-amount" min="0" max="10" value="0" disabled>
-                            <button type="button" onclick="increaseAmount(this, 'tomate')">+</button>
+                            <button type="button" onclick="increaseAmount(this)">+</button>
                         </div>
                     </div>
                     <div class="flex-container addon">
@@ -78,9 +78,9 @@
                             </div>
                         </div>
                         <div class="flex-container input-number">
-                            <button type="button" onclick="decreaseAmount(this, 'cebola')">-</button>
+                            <button type="button" onclick="decreaseAmount(this)">-</button>
                             <input type="number" id="cebola-amount" name="cebola-amount" min="0" max="10" value="0" disabled>
-                            <button type="button" onclick="increaseAmount(this, 'cebola')">+</button>
+                            <button type="button" onclick="increaseAmount(this)">+</button>
                         </div>
                     </div>
                     <div class="flex-container addon">
@@ -93,9 +93,9 @@
                             </div>
                         </div>
                         <div class="flex-container input-number">
-                            <button type="button" onclick="decreaseAmount(this, 'h60')">-</button>
+                            <button type="button" onclick="decreaseAmount(this)">-</button>
                             <input type="number" id="h60-amount" name="h60-amount" min="0" max="10" value="0" disabled>
-                            <button type="button" onclick="increaseAmount(this, 'h60')">+</button>
+                            <button type="button" onclick="increaseAmount(this)">+</button>
                         </div>
                     </div>
                     <div class="flex-container addon">
@@ -108,9 +108,9 @@
                             </div>
                         </div>
                         <div class="flex-container input-number">
-                            <button type="button" onclick="decreaseAmount(this, 'h180')">-</button>
+                            <button type="button" onclick="decreaseAmount(this)">-</button>
                             <input type="number" id="h180-amount" name="h180-amount" min="0" max="10" value="0" disabled>
-                            <button type="button" onclick="increaseAmount(this, 'h180')">+</button>
+                            <button type="button" onclick="increaseAmount(this)">+</button>
                         </div>
                     </div>
                     <div class="flex-container addon">
@@ -123,9 +123,9 @@
                             </div>
                         </div>
                         <div class="flex-container input-number">
-                            <button type="button" onclick="decreaseAmount(this, 'cheddar')">-</button>
+                            <button type="button" onclick="decreaseAmount(this)">-</button>
                             <input type="number" id="cheddar-amount" name="cheddar-amount" min="0" max="10" value="0" disabled>
-                            <button type="button" onclick="increaseAmount(this, 'cheddar')">+</button>
+                            <button type="button" onclick="increaseAmount(this)">+</button>
                         </div>
                     </div>
                     <div class="header" id="extra">
@@ -136,8 +136,8 @@
                     <div class="flex-container header" id="quantity-header">
                         <p>Quantidade</p>
                         <div class="flex-container input-number">
-                            <button type="button" onclick="decreaseAmount(this)">-</button>
-                            <input type="number" id="product-amount" name="product-amount" min="0" max="10" value="0" disabled>
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="number" id="product-amount" name="product-amount" min="1" max="10" value="1" disabled>
                             <button type="button" onclick="increaseAmount(this)">+</button>
                         </div>
                     </div>
