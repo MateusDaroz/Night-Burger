@@ -3,7 +3,7 @@ export const CONFIG = {
     endpoints: {
         login: "/client/login",
         register: "/client/register",
-        registerOrder: "/order/register",
+        registerOrder: "/order/registerOrder",
         getOrders: "/order/getAllOrders"
     }
 };
