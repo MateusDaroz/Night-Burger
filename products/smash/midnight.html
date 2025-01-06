@@ -49,7 +49,7 @@
                         </div>
                         <div class="flex-container input-number">
                             <button type="button" onclick="decreaseAmount(this)">-</button>
-                            <input type="number" id="alface-amount" name="alface-amount" min="0" max="10" value="0" disabled>
+                            <input type="number" id="alface-amount" name="alface-amount" min="0" max="10" value="0" readonly>
                             <button type="button" onclick="increaseAmount(this)">+</button>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="flex-container input-number">
                             <button type="button" onclick="decreaseAmount(this)">-</button>
-                            <input type="number" id="tomate-amount" name="tomate-amount" min="0" max="10" value="0" disabled>
+                            <input type="number" id="tomate-amount" name="tomate-amount" min="0" max="10" value="0" readonly>
                             <button type="button" onclick="increaseAmount(this)">+</button>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                         </div>
                         <div class="flex-container input-number">
                             <button type="button" onclick="decreaseAmount(this)">-</button>
-                            <input type="number" id="cebola-amount" name="cebola-amount" min="0" max="10" value="0" disabled>
+                            <input type="number" id="cebola-amount" name="cebola-amount" min="0" max="10" value="0" readonly>
                             <button type="button" onclick="increaseAmount(this)">+</button>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                         </div>
                         <div class="flex-container input-number">
                             <button type="button" onclick="decreaseAmount(this)">-</button>
-                            <input type="number" id="h60-amount" name="h60-amount" min="0" max="10" value="0" disabled>
+                            <input type="number" id="h60-amount" name="h60-amount" min="0" max="10" value="0" readonly>
                             <button type="button" onclick="increaseAmount(this)">+</button>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                         </div>
                         <div class="flex-container input-number">
                             <button type="button" onclick="decreaseAmount(this)">-</button>
-                            <input type="number" id="h180-amount" name="h180-amount" min="0" max="10" value="0" disabled>
+                            <input type="number" id="h180-amount" name="h180-amount" min="0" max="10" value="0" readonly>
                             <button type="button" onclick="increaseAmount(this)">+</button>
                         </div>
                     </div>
@@ -124,26 +124,26 @@
                         </div>
                         <div class="flex-container input-number">
                             <button type="button" onclick="decreaseAmount(this)">-</button>
-                            <input type="number" id="cheddar-amount" name="cheddar-amount" min="0" max="10" value="0" disabled>
+                            <input type="number" id="cheddar-amount" name="cheddar-amount" min="0" max="10" value="0" readonly>
                             <button type="button" onclick="increaseAmount(this)">+</button>
                         </div>
                     </div>
                     <div class="header" id="extra">
                         <h3>Observações</h3>
                         <p>Escreva quais observações você deseja fazer para deixar o lanche a sua cara!</p>
-                        <textarea id="observation"></textarea>
+                        <textarea id="observation">a</textarea>
                     </div>
                     <div class="flex-container header" id="quantity-header">
                         <p>Quantidade</p>
                         <div class="flex-container input-number">
                             <button type="button" onclick="decreaseQuantity(this)">-</button>
-                            <input type="number" id="product-amount" name="product-amount" min="1" max="10" value="1" disabled>
+                            <input type="number" id="product-amount" name="product-amount" min="1" max="10" value="1" readonly>
                             <button type="button" onclick="increaseAmount(this)">+</button>
                         </div>
                     </div>
                     <div class="order-buttons flex-container header">
                         <button class="btn btn-alt" id="buying" type="submit">Continuar comprando</button>
-                        <button class="btn" id="cart" type="submit">Avançar para o carrinho (R$<span id="final-value">28.99</span>)</button>
+                        <button type="submit" class="btn" id="cart">Avançar para o carrinho (R$<span id="final-value">28.99</span>)</button>
                     </div>
                 </div>
             </form>
