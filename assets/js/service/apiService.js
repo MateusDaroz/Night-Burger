@@ -1,7 +1,7 @@
 import {CONFIG} from "../config.js";
 
 export default class ApiService{
-    static request(event, type){
+    static request(event, type, customizedBody){
         event.preventDefault();
         
         const baseUrl = CONFIG.apiBaseUrl;
@@ -19,12 +19,19 @@ export default class ApiService{
         const url = `${baseUrl}${endpoint}`;
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
-
+        //console.log(data);
+        
         const options = {
             method: type,
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
+            
         };
+
+        switch (type){
+            case "POST":
+                customizedBody === null ? options.body = JSON.stringify(data) : options.body = JSON.stringify(customizedBody);
+                break;
+        }
 
         return fetch(url, options)
         .then(res => {
