@@ -10,18 +10,28 @@ async function insertToCart(event){
 
     const formId = event.target.id;
     const actionType = event.submitter.id;
-    const formData = getFormData(event.target);
+    const formData = getAddonData(event.target);
+    
     console.log(formData);
-    console.log(JSON.stringify(formData));
 
-    function getFormData(form){
+    function getAddonData(form){
         const formData = new FormData(form);
-        return Object.fromEntries(formData.entries());
+        
+        const order = {
+            product: {product_id: 1},
+            client: {client_id: 1},
+            observation: formData.get("observation"),
+            quantity: formData.get("product-amount"),
+            addons: formatAddons(formData),
+            price: document.getElementById("final-value").dataset.value
+        }
+        
+        return order; 
     }
 
     try{    
-        const response = await ApiService.request(event, "POST");
-        /*redirect(actionType);*/
+        const response = await ApiService.request(event, "POST", formData);
+        
     }
     catch(error){
         handleError(error);
@@ -33,5 +43,19 @@ async function insertToCart(event){
 
     function redirect(actionType){
          actionType === "cart" ? window.location.href = REDIRECT_TO_CART_URL : window.location.href = REDIRECT_TO_PRODUCTS_URL;
+    }
+
+    function formatAddons(addonData){
+        let addonString = '';
+        for(let [key, value] of addonData.entries()){
+            if(key === "observation" || key === "product-amount")
+                continue;
+            else{
+                key = key.replace('-amount','');
+                addonString += (`${key}: ${value}x `);
+                
+            }
+        }
+        return addonString;
     }
 }
