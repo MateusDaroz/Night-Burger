@@ -326,14 +326,14 @@ label[for="change-form"], .forgot-remember-group a{
     background-color: var(--color-btn-bg);
 }
 
-
-
-.product-desc img{
-    width: 100%;
+.product-desc{
+    flex-direction: column;
+    background-color: var(--color-btn-bg-hover);
 }
 
-.product-desc .header{
-    margin-bottom: .5em;
+.product-desc img{
+    width: 80%;
+    margin-top: 1em;
 }
 
 .header{
@@ -353,6 +353,10 @@ label[for="change-form"], .forgot-remember-group a{
     resize: none;
     padding: .5em;
     border: none;
+}
+
+.extra-elements #extra{
+    margin-top: .5em;
 }
 
 .product-addon{
