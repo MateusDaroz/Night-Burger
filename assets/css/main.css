@@ -46,6 +46,11 @@
     margin: 0 .3em;
     filter: invert(1);
     width: 22px;
+    cursor: pointer;
+}
+
+.social-medias img:active{
+    filter: invert(.8);
 }
 
 .products-main{
