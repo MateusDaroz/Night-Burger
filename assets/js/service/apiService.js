@@ -23,13 +23,13 @@ export default class ApiService{
         
         const options = {
             method: type,
-            headers: {'Content-Type': 'application/json'},
-            
+            headers: {'Content-Type': 'application/json',},
+            body: JSON.stringify(data)
         };
 
         switch (type){
             case "POST":
-                customizedBody === null ? options.body = JSON.stringify(data) : options.body = JSON.stringify(customizedBody);
+                customizedBody === undefined || customizedBody === null ? options.body = JSON.stringify(data) : options.body = JSON.stringify(customizedBody);
                 break;
         }
 
