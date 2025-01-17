@@ -31,7 +31,7 @@ async function insertToCart(event){
 
     try{    
         const response = await ApiService.request(event, "POST", formData);
-        
+        redirect(actionType);
     }
     catch(error){
         handleError(error);
