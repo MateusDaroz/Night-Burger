@@ -1,7 +1,7 @@
 import {CONFIG} from "../config.js";
 
 export default class ApiService{
-    static request(event, type, customizedBody){
+    static request(event, type, customizedBody, bearer_token=true){
         event.preventDefault();
         
         const baseUrl = CONFIG.apiBaseUrl;
@@ -31,6 +31,12 @@ export default class ApiService{
             case "POST":
                 customizedBody === undefined || customizedBody === null ? options.body = JSON.stringify(data) : options.body = JSON.stringify(customizedBody);
                 break;
+            case "GET":
+                
+        }
+
+        if (bearer_token) {
+            options.headers['Authorization'] = `Bearer ${this.getAccessToken()}`;
         }
 
         return fetch(url, options)
@@ -46,5 +52,12 @@ export default class ApiService{
         .catch(error => {
             console.error('Error in API call: ',error)
         });
+    }
+
+    static getAccessToken() {
+        const cookieName = CONFIG.cookies.access;
+        const match = document.cookie.match(new RegExp(`(^| )${cookieName}=([^;]+)`));
+        
+        return match ? match[2] : null;
     }
 }
