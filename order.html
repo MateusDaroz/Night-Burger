@@ -28,14 +28,26 @@
 
     <main>
         <section class="flex-container" id="order-section">
-            <img src="https://cdn-icons-png.flaticon.com/512/1046/1046886.png">
-            <h1>Ops... Parece que você não possui uma conta ou não está logado no sistema</h1>
-            <p>Crie sua conta agora ou faça login para realizar seu pedido</p>
-            <div class="flex-container">
-                <a href="login.html"><button class="btn">Fazer Login</button></a>
-                <a href="login.html"><button class="btn btn-alt">Criar Conta</button></a>
+            <div class="order-list-container">
+                <h1>Pedidos</h1>
+                <div id="products-list">
+                    <div class="list-item">
+                        <div class="flex-container">
+                            <p id="product-quantity">quantidade</p>
+                            <p id="product-name">NomeLanche</p>
+                        </div>
+                        <div class="flex-container">
+                            <p id="product-value">valor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-container">
+                    <button class="btn btn-alt">Esvaziar Pedidos</button>
+                    <button class="btn">Finalizar Compra</button>
+                </div>
             </div>
         </section>
     </main>
+    <script src="/assets/js/controller/orderListController.js"></script>
 </body>
 </html>
