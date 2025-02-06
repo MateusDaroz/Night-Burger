@@ -1,6 +1,10 @@
+import { CONFIG } from "../config.js";
 import ApiService from "../service/apiService.js";
+import CookieService from "../service/cookieService.js";
 
 const REDIRECT_URL = "../products.html";
+const COOKIE_NAME = 'access_token';
+const SESSION_DURATION = 1800 * 1000;
 
 document.getElementById("login").addEventListener('submit', handleSubmit)
 document.getElementById("register").addEventListener('submit', handleSubmit)
@@ -16,13 +20,12 @@ async function handleSubmit(event){
         return;
 
     try{
-        const response = await ApiService.request(event, "POST");
+        const response = await ApiService.request(event, "POST", undefined, false);
         if(response === "unauthorized"){
             alert("Dados inválidos!");
         }
         else{
-            showSuccessMessage(actionType);
-            redirectToProducts();
+            handleSubmission(response, actionType);
         }
     }
     catch(error){
@@ -55,7 +58,23 @@ async function handleSubmit(event){
     }
 
     function handleSubmission(response, actionType){
-        redirectToProducts();
+        setCookie(response.access_token);
+        showSuccessMessage(actionType, actionType === "register" ? null : response.name);
+        console.log(CookieService.getCookie(COOKIE_NAME));
+        //redirectToProducts();
+    }
+
+    function setCookie(token) {
+        const expirationDate = new Date();
+        const rememberMe = document.getElementById('stay-conected')?.checked || false;
+        
+        if (rememberMe) {
+            expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+        } else {
+            expirationDate.setTime(expirationDate.getTime() + SESSION_DURATION);
+        }
+        
+        CookieService.setCookie(COOKIE_NAME, token, expirationDate);
     }
 
     function redirectToProducts(){
@@ -68,7 +87,7 @@ async function handleSubmit(event){
 
     function showSuccessMessage(actionType, username) {
         const message = actionType === 'login'
-            ? 'Login realizado com sucesso!'
+            ? 'Login realizado com sucesso!, ' + username
             : 'Cadastro realizado com sucesso!';
         alert(message);
     }
