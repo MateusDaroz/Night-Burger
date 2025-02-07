@@ -3,7 +3,7 @@ import CookieService from "../service/cookieService.js";
 
 const REDIRECT_TO_CART_URL = "../../../order.html";
 const REDIRECT_TO_PRODUCTS_URL = "../../../products.html";
-const COOKIE_NAME = 'access_token';
+
 
 document.getElementById("registerOrder").addEventListener('submit', insertToCart);
 
@@ -12,8 +12,8 @@ document.getElementById("registerOrder").addEventListener('submit', insertToCart
 async function insertToCart(event){
     event.preventDefault();
 
-    if(!CookieService.getCookie(COOKIE_NAME)){
-        console.log("Você não está logado no sistema!");
+    if(!ApiService.getAccessToken()){
+        alert("Você não está logado no sistema!");
     }
 
     else{
@@ -21,8 +21,7 @@ async function insertToCart(event){
         const actionType = event.submitter.id;
 
         try{    
-            const cookieData = { cookie: ApiService.getAccessToken(COOKIE_NAME) }
-            const response = await ApiService.request(event, "GET", undefined);
+            const response = await ApiService.request(event, "GET", ApiService.getAccessToken());
             var id = response.client_id;
         }
         catch(error){
@@ -61,7 +60,7 @@ async function insertToCart(event){
         }
 
         function redirect(actionType){
-            actionType === "cart" ? window.location.href = REDIRECT_TO_CART_URL : window.location.href = REDIRECT_TO_PRODUCTS_URL;
+            //actionType === "cart" ? window.location.href = REDIRECT_TO_CART_URL : window.location.href = REDIRECT_TO_PRODUCTS_URL;
         }
 
         function formatAddons(addonData){
