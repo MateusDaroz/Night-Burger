@@ -1,7 +1,7 @@
 import {CONFIG} from "../config.js";
 
 export default class ApiService{
-    static request(event, type, customizedBody, bearer_token=true){
+    static request(event, type, customizedBody, customizedEnd, bearer_token=true){
         event.preventDefault();
         
         const baseUrl = CONFIG.apiBaseUrl;
@@ -11,12 +11,18 @@ export default class ApiService{
         const formId = form.id;
         const endpoint = urlMap[formId];
 
+        var url;
+
         if(!endpoint){
             console.error("FORM Id not found in URL map.")
             return
         }
 
-        const url = `${baseUrl}${endpoint}`;
+        if(customizedEnd!=undefined)
+            url = `${baseUrl}`+customizedEnd;
+        else
+            url = `${baseUrl}${endpoint}`;
+
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
         //console.log(data);
@@ -38,6 +44,8 @@ export default class ApiService{
         if (bearer_token) {
             options.headers['Authorization'] = `Bearer ${this.getAccessToken()}`;
         }
+
+        
 
         return fetch(url, options)
         .then(res => {
