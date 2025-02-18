@@ -6,6 +6,7 @@ export const CONFIG = {
     endpoints: {
         login: "/client/login",
         register: "/client/register",
+        findCookie: "/client/findByCookie",
         registerOrder: "/order/registerOrder",
         getOrders: "/order/getAllOrders"
     }
