@@ -20,7 +20,7 @@ async function handleSubmit(event){
         return;
 
     try{
-        const response = await ApiService.request(event, "POST", undefined, false);
+        const response = await ApiService.request(event, "POST", undefined, undefined, false);
         if(response === "unauthorized"){
             alert("Dados inválidos!");
         }
