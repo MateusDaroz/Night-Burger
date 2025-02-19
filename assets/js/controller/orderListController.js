@@ -1,10 +1,13 @@
-import CookieService from "../service/cookieService";
+import GetOrderService from "../service/getOrderService.js";
 
 const COOKIE_NAME = 'access_token';
 
-function retardo(){
+document.getElementById("testando123").addEventListener("click", loadOrderContent)
+
+async function loadOrderContent(){
     var section = document.getElementById('order-section');
-    if(!CookieService.getCookie(COOKIE_NAME)){
+    var list = document.getElementById('products-list')
+    if(!GetOrderService.getAccessToken()){
     section.classList.add('order-section-off');
     section.innerHTML = `
     <img src="https://cdn-icons-png.flaticon.com/512/1046/1046886.png">
@@ -17,20 +20,41 @@ function retardo(){
     `
     }
     else{
-        section.classList.add('order-section-on');
-        section.innerHTML = `
-        <div class="order-list-container">
-                <h1>Pedidos</h1>
-                <div id="products-list">
+        const client = {
+            access: GetOrderService.getAccessToken()
+        }
+
+        const responseClient = await GetOrderService.request(client, "/client/findByCookie");
+
+        const body = {
+            client_id: responseClient.client_id
+        }
+
+        section.classList.add('order-section-on');  
+        const response = await GetOrderService.request(body, "/order/getAllOrdersOfClient");
+        console.log(response);
+        response.forEach(item => {
+            Object.entries(item).forEach(([key, value]) => {
+                list.innerHTML+= `<div id="list-item">
+                            <div class="flex-container">`
+                switch (key){
+                    case "quantity":
+                        list.innerHTML+= `<p id="product-quantity">${value}</p>`
+                        break;    
+                    case "name":
+                        list.innerHTML+= `<p id="product-name">${value}</p>`
+                        break;
+                    case "value":
+                        list.innerHTML+= `</div>
+                                            <div class="flex-container">
+                                                <p id="product-value">${value}</p>
+                                            </div><div>`
+                        break;
+                }
+            });    
+        });
         
-        `
-        for()
-        
-        
-        += `
-        </div>
-                </div>
-        `
+        list.innerHTML+= `</div>`
         
     }
  }
